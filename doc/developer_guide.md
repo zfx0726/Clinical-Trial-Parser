@@ -12,6 +12,7 @@ for 20 clinical trials, which are used to illustrate the functionality of its mo
 - Install Go from https://golang.org/dl/
 - Set `GOPATH` so that the cloned project is in 
 `$GOPATH/src/github.com/facebookresearch/Clinical-Trial-Parser`
+- Install Go project dependencies with `go get ./...` from project root directory
 - Run `./script/cfg_parse.sh` in the project root directory. 
 The script will write the parsed relations to [cfg_parsed_clinical_trials.tsv](../data/output/cfg_parsed_clinical_trials.tsv).
 - The program parameters can be changed either by changing 

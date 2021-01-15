@@ -11,7 +11,7 @@
 
 set -eu
 
-DATE=$1
+DATE="20210102"
 DIR="data/aact"
 DB=aact
 ZIP_FILE="${DATE}_clinical_trials.zip"
@@ -30,7 +30,7 @@ unzip -o -d "$DIR" "$DIR/$ZIP_FILE"
 dropdb --if-exists "$DB"
 createdb "$DB"
 pg_restore -U "$USER" -e -v -O -x --dbname="$DB" "${DIR}/postgres_data.dmp"
-psql -d "$DB" -c "ALTER ROLE $USER SET search_path TO ctgov,public;"
+psql -d "$DB" -c "ALTER ROLE \"$USER\" SET search_path TO ctgov,public;"
 
 # Check the download:
 
